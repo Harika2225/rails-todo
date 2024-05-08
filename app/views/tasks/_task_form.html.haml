@@ -1,11 +1,13 @@
 .modal-header
-  %h1 New Task
+  %h1 
+    = task.new_record? ? 'New Task' : "Editing task #{task.title}"
 .modal-body
-  = simple_form_for task, class: 'clearfix' do |f|
+  = simple_form_for task, class: 'clearfix', remote: true do |f|
     .modal-body
       = f.input :title
       = f.input :note
-      - # = f.input :completed
+      = f.input :completed
+      - # = f.input :completed, as: :string, input_html: { class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
     .modal-footer
       = link_to 'Cancel', '#', class: 'btn btn-info', data: { dismiss: 'modal' }
       = f.submit 'Save', class: 'btn btn-success'
