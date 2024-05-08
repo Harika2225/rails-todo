@@ -1,0 +1,12 @@
+.modal-header
+  %h1 New Task
+.modal-body
+  = simple_form_for task, class: 'clearfix' do |f|
+    .modal-body
+      = f.input :title
+      = f.input :note
+      - # = f.input :completed
+    .modal-footer
+      = link_to 'Cancel', '#', class: 'btn btn-info', data: { dismiss: 'modal' }
+      = f.submit 'Save', class: 'btn btn-success'
+      
