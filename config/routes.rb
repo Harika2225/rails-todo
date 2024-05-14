@@ -1,6 +1,7 @@
-Rails.application.routes.draw do
+Todo::Application.routes.draw do
+  devise_for :users
+
+  resources :tasks, except: [:index]
+
   root to: 'pages#home'
-  resources :tasks, except: [:index] do
-    # get 'new', to: 'tasks#new', format: :js
-  end
 end

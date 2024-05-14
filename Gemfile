@@ -12,9 +12,17 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 
+# addng coffee
+gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
+
 # Adding js libraries
 gem 'jquery-rails'
 
+# Adding Devise which provides us about authentication
+gem 'devise'
+
+# Adding CanCan to protect a user's ask from being accessed by another user
+gem 'cancan'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
