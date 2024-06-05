@@ -19,4 +19,5 @@
             - # %strong= current_user.email
           .text-center
             - # = link_to 'logout', destroy_user_session_path, method: :delete
+          %a{ href: "http://localhost:3000/report", class: "btn btn-primary", target: "_blank" } REACT
     = yield
